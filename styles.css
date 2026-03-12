@@ -432,12 +432,6 @@ h1, h2, h3, h4 {
   align-items: start;
 }
 
-.educator-illustration {
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto;
-}
-
 /* Icon Mosaic */
 .icon-mosaic {
   display: grid;
@@ -1011,10 +1005,6 @@ h1, h2, h3, h4 {
   .about-illustration {
     display: flex;
     justify-content: center;
-  }
-
-  .educator-illustration {
-    max-width: 280px;
   }
 
   .icon-mosaic {

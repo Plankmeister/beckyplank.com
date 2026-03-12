@@ -5,10 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Becky Plank is a Special Education Teacher, IEP Advocate, and Personal Tutor serving students and families in Olive Branch, MS and the greater Memphis area.">
   <title>Becky Plank | Special Education Teacher, IEP Advocate &amp; Personal Tutor</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://beckyplank.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#1A6B72">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Becky Plank | Special Education Teacher, IEP Advocate &amp; Personal Tutor">
+  <meta property="og:description" content="Becky Plank is a Special Education Teacher, IEP Advocate, and Personal Tutor serving students and families in Olive Branch, MS and the greater Memphis area.">
+  <meta property="og:url" content="https://beckyplank.com/">
+  <meta property="og:site_name" content="Becky Plank">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Becky Plank | Special Education Teacher, IEP Advocate &amp; Personal Tutor">
+  <meta name="twitter:description" content="Becky Plank is a Special Education Teacher, IEP Advocate, and Personal Tutor serving students and families in Olive Branch, MS and the greater Memphis area.">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Becky Plank",
+        "url": "https://beckyplank.com/",
+        "description": "Becky Plank is a Special Education Teacher, IEP Advocate, and Personal Tutor serving students and families in Olive Branch, MS and the greater Memphis area."
+      },
+      {
+        "@type": "Person",
+        "name": "Becky Plank",
+        "url": "https://beckyplank.com/",
+        "jobTitle": "Special Education Teacher",
+        "description": "Special Education Teacher, IEP Advocate, and Personal Tutor with nearly a decade of experience at Desoto County Schools in Olive Branch, Mississippi.",
+        "sameAs": [
+          "https://www.linkedin.com/in/beckyplank/"
+        ],
+        "email": "becky.plank+website@gmail.com",
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Otterbein University"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Memphis"
+          }
+        ],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Teaching License",
+          "name": "Mississippi Teaching License — Special Education"
+        },
+        "knowsAbout": [
+          "Special Education",
+          "IEP Advocacy",
+          "Individualized Education Programs",
+          "Personal Tutoring",
+          "Behavior Intervention Plans",
+          "Inclusive Education"
+        ],
+        "worksFor": {
+          "@type": "EducationalOrganization",
+          "name": "Desoto County Schools",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Olive Branch",
+            "addressRegion": "MS",
+            "addressCountry": "US"
+          }
+        }
+      },
+      {
+        "@type": "EducationalOccupationalService",
+        "name": "Becky Plank — Personal Tutoring & IEP Advocacy",
+        "provider": {
+          "@type": "Person",
+          "name": "Becky Plank"
+        },
+        "description": "Personal tutoring and IEP advocacy services for students and families in the greater Memphis area.",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.9618,
+            "longitude": -89.8295
+          },
+          "geoRadius": "50 mi"
+        },
+        "serviceType": ["Personal Tutoring", "IEP Advocacy", "Special Education Support"],
+        "url": "https://beckyplank.com/"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -19,10 +122,10 @@
   <header class="site-header" id="site-header">
     <nav class="nav-container" aria-label="Main navigation">
       <a href="#hero" class="nav-logo">Becky Plank</a>
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
         <span class="hamburger"></span>
       </button>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#about">About</a></li>
         <li><a href="#philosophy">My Approach</a></li>
         <li><a href="#journey">Experience</a></li>
