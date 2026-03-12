@@ -213,7 +213,7 @@ h1, h2, h3, h4 {
 
 .nav-logo {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-teal-dark);
   letter-spacing: -0.01em;
