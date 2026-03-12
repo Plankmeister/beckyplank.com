@@ -72,7 +72,7 @@
 
   // --- Scroll reveal animations ---
   var fadeTargets = document.querySelectorAll(
-    '.pillar, .timeline-item, .credential-card, .about-text, .about-illustration, .advocacy-text, .contact-centered, .section-heading'
+    '.pillar, .timeline-item, .credential-card, .about-text, .about-illustration, .advocacy-text, .contact-centered, .section-heading, .service-card, .stat-item, .advocacy-expect'
   );
 
   fadeTargets.forEach(function (el) {
@@ -165,6 +165,49 @@
     var style = document.createElement('style');
     style.textContent = '@keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }';
     document.head.appendChild(style);
+  }
+
+  // --- Animated stat counters ---
+  if (!prefersReducedMotion) {
+    var statNumbers = document.querySelectorAll('.stat-number');
+    var statsObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-target'));
+          var suffix = el.getAttribute('data-suffix') || '';
+          var prefix = el.getAttribute('data-prefix') || '';
+          var duration = 1500;
+          var start = performance.now();
+
+          function animate(now) {
+            var elapsed = now - start;
+            var progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(eased * target);
+            el.textContent = prefix + current + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          }
+
+          requestAnimationFrame(animate);
+          statsObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(function (num) {
+      statsObserver.observe(num);
+    });
+  } else {
+    // Show final values immediately for reduced motion
+    document.querySelectorAll('.stat-number').forEach(function (el) {
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      el.textContent = prefix + el.getAttribute('data-target') + suffix;
+    });
   }
 
   // --- Smooth scroll for all anchor links (fallback for older browsers) ---
